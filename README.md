@@ -56,10 +56,6 @@ The servlet keeps the `isALMLoginImplementation: true` response flag the ALM fro
 and gives you a marked extension point to add cookies, token validation/refresh calls, or extra
 response fields.
 
-An OSGi configuration (`ALM Custom Auth - Login Servlet`) lets you toggle the override on/off
-(`enabled`) from the Web Console / Configuration Manager without redeploying, e.g. for a staged
-rollout or a quick rollback.
-
 ### Required: implement `getLearnerEmail(...)`
 
 `CustomAuthLoginServlet#getLearnerEmail` is a stub that returns a hardcoded email address. You
