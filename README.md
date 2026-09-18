@@ -1,3 +1,13 @@
+## 🚨 Disclaimer 🚨
+
+> **⚠️ IMPORTANT:**  
+> _alm-custom-auth-boilerplate provide a quick-start code block for using custom authetication with Adobe Learning Manager Reference Site._  
+> This package is designed for **customers using ALM reference site components with their own AEM sites**.  
+> Upon implementation of the provided codebase, **ongoing maintenance** and **further development** shall be the responsibility of the **implementing party**.
+
+> **By using this package, you agree to these terms.**  
+> _Please ensure you understand the responsibilities involved before proceeding._
+
 # ALM Custom Auth Boilerplate
 
 A standalone reference AEM bundle project for customers/partners to override the ALM reference site's
@@ -13,6 +23,12 @@ This OSGi bundle is intended to work with the Adobe Learning Manager Reference S
 Install this bundle alongside the reference site's AEM project
 bundle. It overrides the reference site's admin refresh-token login servlet through a higher
 OSGi service ranking; it is not a standalone replacement for the reference site.
+
+## Runtime requirements and behavior
+
+- This custom authentication flow is supported only on the AEM **publisher** instance. Deploy and configure the bundle on the author/publisher that serves the learner-facing site.
+- The Adobe Learning Manager client ID configured in the Learning Manager configuration must be enabled in the Learning Manager backend to generate the learner token.(Please talk to ALM team to get this done).
+- When the Learning Manager component loads, this servlet performs the login silently in the background. This avoids prompting the learner to sign in again through Adobe SSO.
 
 ## How the override works
 
